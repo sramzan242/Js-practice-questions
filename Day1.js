@@ -163,3 +163,102 @@ console.log(validateEmail("user@@example.com")); // false
 
 
 
+//4. Write a function calculator that can perform basic arithmetic operations and supports function chaining.
+
+function calculator() {
+    let value = 0;
+
+    const add = num => {
+        value += num;
+        return { add, subtract, multiply, result };
+    };
+
+    const subtract = num => {
+        value -= num;
+        return { add, subtract, multiply, result };
+    };
+
+    const multiply = num => {
+        value *= num;
+        return { add, subtract, multiply, result };
+    };
+
+    const result = () => value;
+
+    return { add, subtract, multiply, result };
+}
+
+console.log(calculator().add(5).multiply(2).subtract(3).result());
+
+
+//5. Write a function stringModifier that can modify a string using various methods and supports function chaining.
+
+function stringModifier(str) {
+    let value = str;
+
+    const capitalize = () => {
+        value = value.toUpperCase();
+        return { capitalize, reverse, result };
+    };
+
+    const reverse = () => {
+        value = value.split("").reverse().join("");
+        return { capitalize, reverse, result };
+    };
+
+    const result = () => value;
+
+    return { capitalize, reverse, result };
+}
+
+console.log(stringModifier("Ramzan").reverse().capitalize().result());
+
+//6. Write a function arrayProcessor that can process an array using various methods and supports function chaining.
+
+function arrayProcessor(arr) {
+    let array = arr;
+
+    const double = () => {
+        array = array.map(num => num * 2);
+        return { double, filterEven, sum };
+    };
+
+    const filterEven = () => {
+        array = array.filter(num => num % 2 === 0);
+        return { double, filterEven, sum };
+    };
+
+    const sum = () => array.reduce((acc, curr) => acc + curr, 0);
+
+    return { double, filterEven, sum };
+}
+
+
+
+console.log(arrayProcessor([1,2,3,4]).double().filterEven().sum());
+
+
+// 7. Write a function formatter that can format a string using various methods and supports function chaining.
+
+
+function formatter(str) {
+    let value = str;
+
+    const capitalize = () => {
+        value = value.charAt(0).toUpperCase() + value.slice(1);
+        return { capitalize, truncate, result };
+    };
+
+    const truncate = length => {
+        if (value.length > length) {
+            value = value.slice(0, length) + "...";
+        }
+        return { capitalize, truncate, result };
+    };
+
+    const result = () => value;
+
+    return { capitalize, truncate, result };
+}
+
+console.log(formatter("hello eera").capitalize().truncate(4).result());
