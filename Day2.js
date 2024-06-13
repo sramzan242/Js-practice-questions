@@ -190,8 +190,4 @@ console.log(
     },
   ])
 );
-// ["Angelina Jolie can go to The Matrix",
-// "Eric Jones is under age!!",
-// "Paris Hilton is under age!!",
-// "Kayne West is under age!!",
-// "Bob Ziroll can go to The Matrix"]
+
