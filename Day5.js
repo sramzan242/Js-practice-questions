@@ -171,3 +171,5 @@ const monthlySummary = transactions.reduce((acc, transaction) => {
 }, {});
 
 console.log(monthlySummary);
+
+
